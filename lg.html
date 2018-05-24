@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="login.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+         
+    </head>
+
+    <body>
+            <script type="text/javascript">
+                function mouseoverPass(obj) {
+                var obj = document.getElementById('pw');
+                obj.type = "text";
+                }
+                function mouseoutPass(obj) {
+                    var obj = document.getElementById('pw');
+                    obj.type = "password";
+                }
+
+                function check() {
+                var e = document.getElementById('usrname').value;
+                var p = document.getElementById('pw').value;
+                let pswd = localStorage.getItem("pswd");
+                let email = localStorage.getItem("uname");
+            
+                    if (e == email && p == pswd) {
+                        var url = "dashboard.html";
+                        console.log(url);
+                        window.location = 'https://www.google.com/';
+                    } else {
+                        alert("Your username and password are invalid...!!! ");
+                    }
+            }
+                </script>   
+        <div class="row">
+            <div class="col-md-6"> 
+
+            </div>
+                  
+            <div class="col-md-6">
+        <form id="login-form"> 
+                <input id="usrname" class="letter2" type="text" placeholder="Enter Username" value=""/>
+                <input id="pw" class="letter" type="password" placeholder="Enter Password" value=""/>
+                <img class="eye" src="e.png" width="25px" height="25px" onmouseover="mouseoverPass()" onmouseout="mouseoutPass()" />
+                <input id="login_btn" type="submit" value="Login" onClick="check()"/> 
+           </form>
+            
+                
+            </div>
+    </div>   
+    </body>
+</html>
